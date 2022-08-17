@@ -5,7 +5,7 @@ const compression = require('compression');
 const router = require('./routes');
 const { handleClintError, handleServerError } = require('./controllers/error');
 const app = express();
-// const fetch = require('node-fetch')
+const env = require('dotenv').config()
 
 app.set('port', process.env.PORT || 8080);
 // app.use(helmet());
