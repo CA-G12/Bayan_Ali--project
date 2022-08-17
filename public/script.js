@@ -1,5 +1,6 @@
 const searchInput = document.querySelector('.search-input')
 const searchBtn = document.querySelector('.search-btn')
+
 searchBtn.addEventListener('click', () => {
     const data = searchInput.value;
     console.log('front query sent:', data);
@@ -9,17 +10,6 @@ searchBtn.addEventListener('click', () => {
         headers: { 'Content-Type': 'application/json' }
     }
     fetch(`/search`, options)
-
-    console.log('under fetch');
+        .then(res => res.json())
+        .then(data => createCards(data))
 })
-
-// const formInpt = document.querySelector('.form-inpt');
-// const submit = document.querySelector('.form-btn');
-
-
-// submit.addEventListener('click', () => {
-//     // e.preventDefault();
-//     const data = formInpt.value;
-
-//     console.log('form data:', JSON.stringify(data));
-// })

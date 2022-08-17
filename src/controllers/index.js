@@ -1,5 +1,6 @@
-const { getMovies, postMovies } = require('./movies');
-const { clientErrors, serverErrors } = require('./error')
+const { getMovies, getApiMovies, postMovies } = require('./movies');
+const { handleClintError, handleServerError } = require('./error')
+const getLanding = require('./landing')
 
 
-module.exports = { clientErrors, serverErrors, getMovies, postMovies };
+module.exports = { handleClintError, handleServerError, getMovies, getApiMovies, postMovies, getLanding };
