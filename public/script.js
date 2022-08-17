@@ -1,29 +1,25 @@
 const searchInput = document.querySelector('.search-input')
-
-searchInput.addEventListener('keyup', () => {
-    const data = 'searchInput.value'
-    const settings = {
+const searchBtn = document.querySelector('.search-btn')
+searchBtn.addEventListener('click', () => {
+    const data = searchInput.value;
+    console.log('front query sent:', data);
+    const options = {
         method: 'POST',
-        body: JSON.stringify(data),
+        body: JSON.stringify({ name: data }),
         headers: { 'Content-Type': 'application/json' }
     }
-    fetch('/search', settings)
+    fetch(`/search`, options)
+
+    console.log('under fetch');
 })
 
+// const formInpt = document.querySelector('.form-inpt');
+// const submit = document.querySelector('.form-btn');
 
-// const data = { username: 'example' };
 
-// fetch('https://example.com/profile', {
-//     method: 'POST', // or 'PUT'
-//     headers: {
-//         'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(data),
+// submit.addEventListener('click', () => {
+//     // e.preventDefault();
+//     const data = formInpt.value;
+
+//     console.log('form data:', JSON.stringify(data));
 // })
-//     .then((response) => response.json())
-//     .then((data) => {
-//         console.log('Success:', data);
-//     })
-//     .catch((error) => {
-//         console.error('Error:', error);
-//     });

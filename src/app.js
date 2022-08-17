@@ -1,16 +1,17 @@
 const path = require('path');
 const express = require('express');
-const helmet = require('helmet');
+// const helmet = require('helmet');
 const compression = require('compression');
 const router = require('./routes');
 const { clientErrors, serverErrors } = require('./controllers/error');
 const app = express();
+// const fetch = require('node-fetch')
 
-app.set('port', process.env.PORT || 3001);
-app.use(helmet());
+app.set('port', process.env.PORT || 8080);
+// app.use(helmet());
 app.use(compression());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(
     express.static(path.join(__dirname, '..', 'public'))
 );
