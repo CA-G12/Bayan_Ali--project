@@ -3,7 +3,7 @@ const express = require('express');
 // const helmet = require('helmet');
 const compression = require('compression');
 const router = require('./routes');
-const { clientErrors, serverErrors } = require('./controllers/error');
+const { handleClintError, handleServerError } = require('./controllers/error');
 const app = express();
 // const fetch = require('node-fetch')
 
@@ -17,7 +17,7 @@ app.use(
 );
 
 app.use(router);
-app.use(clientErrors);
-app.use(serverErrors);
+app.use(handleClintError);
+app.use(handleServerError);
 
 module.exports = app;

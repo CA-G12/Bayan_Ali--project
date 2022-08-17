@@ -12,3 +12,29 @@
     --beige: #F7D08A;
     --navy: #31087B;
 }
+
+
+/***********************************************
+  $error page
+***********************************************/
+.main{
+    flex: 1;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .error__desc {
+    text-align: center;
+    font-size: 1.5em;
+  }
+  
+  .error__msg {
+    color: #999;
+  }
+  
