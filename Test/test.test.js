@@ -11,13 +11,13 @@ test('/movies should return the movies page', (done) => {
         done();
     })
 })
-test('/apiMovies should return the movies page with default items', (done) => {
-    request(app)
-    .get('/apiMovies')
-    .expect(200)
-    .expect('Content-Type', /json/)
-    .end((err, res) => {
-        if (err) return done(err);
-        done();
-    })
-})
+// test('/apiMovies should return the movies page with default items', (done) => {
+//     request(app)
+//     .get('/apiMovies')
+//     .expect(200)
+//     .expect('Content-Type', /json/)
+//     .end((err, res) => {
+//         if (err) return done(err);
+//         done();
+//     })
+// })
