@@ -1,6 +1,18 @@
 //access elements from html
 const inputSearch = document.querySelector('.input-search')
 const buttSearch = document.querySelector('.btn-search')
+const popUpContiner= document.querySelector('.po-up-continer')
+const closeBtn = document.querySelector('.close')
+const para = document.querySelector('.para')
+
+
+closeBtn.addEventListener('click', ()=>{
+    popUpContiner.style.visibility='hidden';
+})
+popUpContiner.addEventListener('click',()=>{
+    popUpContiner.style.visibility='hidden'
+})
+
 buttSearch.addEventListener('click', () => {
     const data = inputSearch.value;
     const options = {
@@ -45,6 +57,8 @@ function createEle(ele, className, parent) {
   
       summaryButt.addEventListener('click', (e) => {
         e.preventDefault();
+        popUpContiner.style.visibility='visible';
+        para.textContent = `${element.overview}`
         /// make pop-up
       })
     })
